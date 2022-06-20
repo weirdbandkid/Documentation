@@ -22,3 +22,7 @@ setTimeout(async () => {
     console.log(checkres.status)
 }, 5000);
 ```
+
+---
+
+*[Improve this page](https://github.com/FAXES/Documentation/tree/main/Product%20Documentation/FaxTrack)*
