@@ -1,26 +1,58 @@
+This is a quick example for using the API within FaxTrack. These examples use the  `form-data` NPM package to send files through the request. This is not required though.
+
+> The 'title' field is required in all requests.
+
+
+### Create Issue
+
 ```js
 var FormData = require('form-data');
-setTimeout(async () => {
-    const form = new FormData();
-    form.append('title', '[A] Stack_Overflowfgfgf()...');
-    form.append('description', `\`\`\`\nError: Connection lost: The server closed the connection.\n\`\`\``);
-    form.append('category', 'Important');
-    form.append('versions', '1.9, 1.9.3');
-    form.append('file', fs.createReadStream('./error.json'));
+const form = new FormData();
+form.append('title', 'TITLE');
+form.append('description', `DESCRIPTION_SUPPORTS_MARKDOWN`);
+form.append('category', 'CATEGORY_NAME');
+form.append('versions', 'AFFECTED_VERSIONS');
+form.append('labels', 'LABELS');
+form.append('links', 'LINKS_COMMA_SEPERATED');
+form.append('file', fs.createReadStream('./PATH_TO_FILE'));
 
-    let checkres = await axios({
-        method: 'post',
-        url: `http://localhost:3000/api/feedback/1`,
-        headers: {
-            'Authorization': 'test',
-            ...form.getHeaders()
-        },
-        data: form
-    }).catch(function(err) {
-        throw err;
-    });
-    console.log(checkres.status)
-}, 5000);
+let checkres = await axios({
+    method: 'post',
+    url: `https://bugs.example.com/api/issue/PROJECT_ID`,
+    headers: {
+        'Authorization': 'API_TOKEN_HERE',
+        ...form.getHeaders()
+    },
+    data: form
+}).catch(function(err) {
+    throw err;
+});
+console.log(checkres.status)
+```
+
+### Create Feedback
+
+```js
+var FormData = require('form-data');
+const form = new FormData();
+form.append('title', 'TITLE');
+form.append('description', `DESCRIPTION_SUPPORTS_MARKDOWN`);
+form.append('labels', 'LABELS');
+form.append('links', 'LINKS_COMMA_SEPERATED');
+form.append('file', fs.createReadStream('./PATH_TO_FILE'));
+
+let checkres = await axios({
+    method: 'post',
+    url: `https://bugs.example.com/api/feedback/PROJECT_ID`,
+    headers: {
+        'Authorization': 'API_TOKEN_HERE',
+        ...form.getHeaders()
+    },
+    data: form
+}).catch(function(err) {
+    throw err;
+});
+console.log(checkres.status)
 ```
 
 ---
