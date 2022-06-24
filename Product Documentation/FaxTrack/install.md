@@ -44,3 +44,5 @@ node .
 ```
 
 FaxTrack will now be started and running.
+
+Go to the `/setup` URL to complete the setup of FaxTrack.
