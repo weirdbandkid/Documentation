@@ -30,7 +30,8 @@ faxstore.on('login', function(userObject, DbUserResults) {
   const date = Date.now();
   faxstore.emit('CreateAuditLog', DbUserResults.userId, 'Logged in', `logged in at <t:${date}>`);
   
-  // This example uses 'DbUserResults.userId' over 'userObject.id' as it can be more reliable and correlates to the database. However, both would work the same.
+  // This example uses 'DbUserResults.userId' over 'userObject.id' as it can be more reliable and correlates to the database.
+  // However, both would work the same.
 });
 ```
 
@@ -62,3 +63,6 @@ faxstore.on('login', function(userObject, DbUserResults) {
 |                            |                                             |                                                                                           |      |
 |                            |                                             |                                                                                           |      |
 |                            |                                             |                                                                                           |      |
+
+
+*[Improve this page](https://github.com/FAXES/Documentation/blob/main/FaxStore/Events.md)*
