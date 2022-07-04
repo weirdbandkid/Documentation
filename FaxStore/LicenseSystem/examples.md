@@ -1,5 +1,6 @@
 - [V2 - Node.Js](#v2---node-js)
 - [V1 - Node.Js](#v1---node.js)
+- [V2 - Lua](#v2---lua)
 - [V1 - Lua](#v1---lua)
 
 
@@ -59,7 +60,7 @@ if(licensecheck.data.pass) {
 ## V2 - Lua
 ```lua
 local productId = 1;
-local licenseKey = 'iouuiosfdoig';
+local licenseKey = 'ABC_123';
 
 PerformHttpRequest("https://license.example.com/api/check/" .. productId, function(errorCode, resultData, resultHeaders)
     local data = json.decode(resultData)
