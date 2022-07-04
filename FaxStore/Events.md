@@ -64,7 +64,9 @@ faxstore.on('login', function(userObject, DbUserResults) {
 | subscriptionUpdated        | userId, expiry                                         | Emits when a subscriptions invoice is first generated                                     | on   |
 | subscriptionCancelled      | subscription, userObject                               | Emits when a subscription is cancelled by a user.                                         | on   |
 | subscriptionEnded          | subscription, userId                                   | Emits when a subscription ends after being cancelled.                                     | on   |
-|                            |                                                        |                                                                                           |      |
+| releaseCreate | storeItem, release, releaseId, staffUser | Emits when a release is created | on |
+| releaseEdit | release, staffUser | Emits when a release is edited | on |
+| releaseDelete | release, staffUser | Emits when a release is deleted | on |
 
 
 *[Improve this page](https://github.com/FAXES/Documentation/blob/main/FaxStore/Events.md)*
