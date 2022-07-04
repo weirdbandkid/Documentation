@@ -46,7 +46,7 @@ faxstore.on('login', function(userObject, DbUserResults) {
 | pushNotification           | userId, details, redirect                              | Creates a notification on the site for this user. All arguments required and are strings. | emit |
 | removeDiscordRole          | userId, roles [array]                                  | Removes roles from the user is possible.                                                  | emit |
 | addDiscordRole             | userId, roles [array]                                  | Adds roles to the user if possible.                                                       | emit |
-| invoiceCreated             | invoiceId, invoicedUser, due | Emits when a invoice is created.                                                          | on   |
+| invoiceCreated             | invoiceId, invoicedUser, staffUser, invoicedItems, due | Emits when a invoice is created.                                                          | on   |
 | invoiceUpdated             | invoiceId, invoicedUser, due | When an invoice is automatically updated for it's status, this event emits.               | on   |
 | login                      | userObject, DbUserResults                              | Emits when a user logs into the site.                                                     | on   |
 | logout                     | userObject                                             | Emits when a user logs out of the site.                                                   | on   |
