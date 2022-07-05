@@ -18,3 +18,7 @@ FaxStore will also launch a screen session for you and give you the prompt to st
 
 *This is a beta feature, so give us [feedback](https://bugs.faxes.zone/projects/faxstore/add?t=feedback) on your experience with this simplified imstall.*
 *[Improve this page](https://github.com/FAXES/Documentation/tree/main/FaxStore)*
+
+:::info
+If you've completed this step, you don't have to go through the other install steps.
+:::
