@@ -3,6 +3,7 @@
 - [V2 - Lua](#v2---lua)
 - [V1 - Lua](#v1---lua)
 - [V1 - PHP](#v1---php)
+- [V2 - PHP](#v2---php)
  
 
 ## V2 - Node JS
@@ -120,7 +121,36 @@ $data = json_decode($resp);
 if ($data->status == "OK") {
     echo "License Passed";
 } else {
-    echo "License Failed
+    echo "License Failed";
     exit;
 };
 ?>
+```
+
+## V2 - PHP
+
+```php
+<?php
+$url = "https://license.example.com/api/check/multiple?proIds=6,9"; // 6 and 9 are the ids of the products
+$license = "";
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$headers = array(
+   "Accept: application/json",
+   "Content-Type: application/json",
+   "authorization: $license",
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+$resp = curl_exec($curl);
+curl_close($curl);
+$data = json_decode($resp);
+if ($data->status == "OK") {
+    echo "License Passed";
+} else {
+    echo "License Failed";
+    exit;
+};
+?>
+```
