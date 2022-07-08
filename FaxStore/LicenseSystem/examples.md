@@ -92,3 +92,34 @@ end, "POST", "", {
     ["authorization"] = licenseKey
 })  
 ```
+
+## V1 - PHP
+
+```php
+<?php
+$url = "https://license.example.com/api/checkitem/69"; // 69 is the ID of the product
+$license = "";
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Accept: application/json",
+   "Content-Type: application/json",
+   "authorization: $license",
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+
+$resp = curl_exec($curl);
+curl_close($curl);
+$data = json_decode($resp);
+
+if ($data->status == "OK") {
+    echo "License Passed";
+} else {
+    echo "License Failed
+    exit;
+};
+?>
